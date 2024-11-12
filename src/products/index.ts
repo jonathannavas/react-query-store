@@ -4,6 +4,7 @@ export { ProductList } from './components/ProductList'
 export type { Product } from './interfaces/product'
 export { StoreLayout } from './layout/StoreLayout'
 
+export { usePrefetchProduct } from './hooks/usePrefetchProduct'
 export { useProduct } from './hooks/useProduct'
 export { useProducts } from './hooks/useProducts'
 
