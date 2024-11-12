@@ -4,7 +4,12 @@ export { ProductList } from './components/ProductList'
 export type { Product } from './interfaces/product'
 export { StoreLayout } from './layout/StoreLayout'
 
+export { useProduct } from './hooks/useProduct'
+export { useProducts } from './hooks/useProducts'
+
 export { CompleteListPage } from './pages/CompleteListPage'
 export { MensPage } from './pages/MensPage'
 export { NewProduct } from './pages/NewProduct'
+export { ProductById } from './pages/ProductById'
 export { WomensPage } from './pages/WomensPage'
+export * as productActions from './services/actions'
