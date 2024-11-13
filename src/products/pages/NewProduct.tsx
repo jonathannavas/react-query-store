@@ -1,5 +1,6 @@
 import { Button, Image, Input, Textarea } from '@nextui-org/react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import { useProductMutation } from '../hooks/useProductMutation'
 
 interface FormInputs {
   title: string
@@ -10,6 +11,8 @@ interface FormInputs {
 }
 
 export const NewProduct = () => {
+  const { mutation } = useProductMutation()
+
   const { control, handleSubmit, watch } = useForm<FormInputs>({
     defaultValues: {
       title: 'Teclado mecanico',
@@ -26,6 +29,7 @@ export const NewProduct = () => {
 
   const onSubmit: SubmitHandler<FormInputs> = (data: FormInputs) => {
     console.log(data)
+    mutation.mutate(data)
   }
 
   return (
@@ -113,8 +117,13 @@ export const NewProduct = () => {
             />
 
             <br />
-            <Button className="mt-2" color="primary" type="submit">
-              Crear
+            <Button
+              className="mt-2"
+              color="primary"
+              type="submit"
+              isDisabled={mutation.isLoading}
+            >
+              {mutation.isLoading ? 'Cargando....' : 'Crear producto'}
             </Button>
           </div>
 

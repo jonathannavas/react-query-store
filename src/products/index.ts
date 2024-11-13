@@ -6,8 +6,8 @@ export { StoreLayout } from './layout/StoreLayout'
 
 export { usePrefetchProduct } from './hooks/usePrefetchProduct'
 export { useProduct } from './hooks/useProduct'
+export { useProductMutation } from './hooks/useProductMutation'
 export { useProducts } from './hooks/useProducts'
-
 export { CompleteListPage } from './pages/CompleteListPage'
 export { MensPage } from './pages/MensPage'
 export { NewProduct } from './pages/NewProduct'
