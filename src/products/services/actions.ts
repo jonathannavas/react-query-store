@@ -26,7 +26,7 @@ export const getProductById = async (id: number): Promise<Product> => {
   return data
 }
 
-interface ProductLike {
+export interface ProductLike {
   id?: number
   title: string
   price: number
@@ -38,7 +38,7 @@ interface ProductLike {
 export const createProduct = async (
   product: ProductLike
 ): Promise<ProductLike> => {
-  // await sleep(2)
+  await sleep(5)
   const { data } = await productsApi.post<ProductLike>(`/products`, product)
   return data
 }
