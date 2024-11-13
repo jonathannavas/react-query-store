@@ -59,6 +59,7 @@ export const useProductMutation = () => {
     },
 
     onError: (error, variables, context) => {
+      console.log({ error, variables, context })
       queryClient.removeQueries(['products', context?.optimisticProduct.id])
       queryClient.setQueryData<ProductLike[]>(
         ['product', { filterKey: variables.category }],
