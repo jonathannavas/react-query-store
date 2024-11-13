@@ -16,7 +16,7 @@ export const ProductById = () => {
       <h1 className="text-2xl font-bold">Producto</h1>
 
       {isLoading && <p>Cargando product....</p>}
-      {product && <ProductCard product={product} fullDescription />}
+      {product && <ProductCard product={product} fullDescription key={id} />}
     </div>
   )
 }
